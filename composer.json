@@ -1,0 +1,24 @@
+{
+  "name": "marcosh/ophptics",
+  "description": "A functional optics library for PHP",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marco Perone",
+      "email": "pasafama@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Marcosh\\Ophptics\\": "src/"
+    }
+  },
+  "require-dev": {
+    "maglnet/composer-require-checker": "^1.1",
+    "kahlan/kahlan": "^4.3"
+  }
+}
