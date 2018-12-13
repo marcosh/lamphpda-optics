@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Marcosh\OphpticsSpec;
 
-use Marcosh\Ophptics\Lens;
+use Marcosh\Ophptics\BaseLens;
 
 class Street
 {
@@ -38,7 +38,7 @@ class Street
     }
 }
 
-$streetNameLens = new Lens(
+$streetNameLens = new BaseLens(
     function (Street $street): string {
         return $street->getName();
     },
@@ -100,7 +100,7 @@ class Address
     }
 }
 
-$addressStreetLens = new Lens(
+$addressStreetLens = new BaseLens(
     function (Address $address): Street {
         return $address->getStreet();
     },
