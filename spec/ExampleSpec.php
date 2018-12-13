@@ -57,6 +57,15 @@ describe('StreetNameLens', function () use ($streetNameLens) {
     it('sets the name correctly', function () use ($streetNameLens, $street) {
         expect($streetNameLens->set($street, 'Downing Street'))->toEqual(new Street(221, 'Downing Street'));
     });
+
+    it('does not modify the original data structure', function () use ($streetNameLens, $street) {
+        $oldStreet = clone $street;
+
+        $newStreet = $streetNameLens->set($street, 'Downing Street');
+
+        expect($street)->toEqual($oldStreet);
+        expect($newStreet)->not->toEqual($street);
+    });
 });
 
 class Address
@@ -111,7 +120,18 @@ describe('AddressStreetLens', function () use ($addressStreetLens) {
     it('sets the street correctly', function () use ($addressStreetLens, $address) {
         $newStreet = new Street(221, 'Downing Street');
         $newAddress = new Address('London', $newStreet);
+
         expect($addressStreetLens->set($address, $newStreet))->toEqual($newAddress);
+    });
+
+    it('does not modify the original data structure', function () use ($addressStreetLens, $address) {
+        $oldAddress = clone $address;
+
+        $newStreet = new Street(221, 'Downing Street');
+        $newAddress = $addressStreetLens->set($address, $newStreet);
+
+        expect($address)->toEqual($oldAddress);
+        expect($newAddress)->not->toEqual($address);
     });
 });
 
@@ -126,6 +146,16 @@ describe('Composing StreetNameLens with AddressStreetLens', function () use ($st
     it('sets the correct street name', function () use ($streetNameLens, $addressStreetLens, $address) {
         $newStreet = new Street(221, 'Downing Street');
         $newAddress = new Address('London', $newStreet);
+
         expect($addressStreetLens->compose($streetNameLens)->set($address, 'Downing Street'))->toEqual($newAddress);
+    });
+
+    it('does not modify the original data structure', function () use ($streetNameLens, $addressStreetLens, $address) {
+        $oldAddress = clone $address;
+
+        $newAddress = $addressStreetLens->compose($streetNameLens)->set($address, 'Downing Street');
+
+        expect($address)->toEqual($oldAddress);
+        expect($newAddress)->not->toEqual($address);
     });
 });
