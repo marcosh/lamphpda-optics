@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Lens base class handling common behaviour
 - Class getter and setter lens
 - Array value lens
+- Class property lens
