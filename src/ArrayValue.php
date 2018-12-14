@@ -4,47 +4,21 @@ declare(strict_types=1);
 
 namespace Marcosh\Ophptics;
 
-final class ArrayValue implements Lens
+final class ArrayValue extends BaseLens implements Lens
 {
-    /**
-     * @var string
-     */
-    private $key;
-
     public function __construct(string $key)
     {
-        $this->key = $key;
-    }
+        parent::__construct(
+            function ($s) use ($key) {
+                return $s[$key];
+            },
+            function ($s, $a) use ($key) {
+                $ret = $s;
 
-    /**
-     * @param mixed $s : S
-     * @return mixed : A
-     */
-    public function get($s)
-    {
-        return $s[$this->key];
-    }
+                $ret[$key] = $a;
 
-    /**
-     * @param mixed $s : S
-     * @param mixed $a : A
-     * @return mixed
-     */
-    public function set($s, $a)
-    {
-        $ret = $s;
-
-        $ret[$this->key] = $a;
-
-        return $ret;
-    }
-
-    /**
-     * @param Lens $that : Lens<A, B>
-     * @return Lens : Lens<S, B>
-     */
-    public function compose(Lens $that): Lens
-    {
-        // TODO: Implement compose() method.
+                return $ret;
+            }
+        );
     }
 }
