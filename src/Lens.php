@@ -21,9 +21,16 @@ interface Lens
     /**
      * @param mixed $s : S
      * @param mixed $a : A
-     * @return mixed
+     * @return mixed : S
      */
     public function set($s, $a);
+
+    /**
+     * @param mixed $s : S
+     * @param callable $f : A -> A
+     * @return mixed : S
+     */
+    public function modify($s, callable $f);
 
     /**
      * @param Lens $that : Lens<A, B>

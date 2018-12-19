@@ -66,6 +66,15 @@ describe('StreetNameLens', function () use ($streetNameLens) {
         expect($street)->toEqual($oldStreet);
         expect($newStreet)->not->toEqual($street);
     });
+
+    it('modifies the internal value via a callable', function () use ($streetNameLens, $street) {
+        $oldStreet = clone $street;
+
+        $newStreet = new Street(221, 'BAKER STREET');
+
+        expect($streetNameLens->modify($street, 'strtoupper'))->toEqual($newStreet);
+        expect($street)->toEqual($oldStreet);
+    });
 });
 
 class Address
@@ -133,6 +142,20 @@ describe('AddressStreetLens', function () use ($addressStreetLens) {
         expect($address)->toEqual($oldAddress);
         expect($newAddress)->not->toEqual($address);
     });
+
+    it('modifies the internal value via a callable', function () use ($addressStreetLens, $address) {
+        $oldAddress = clone $address;
+
+        $newStreet = new Street(221, 'Downing Street');
+        $newAddress = new Address('London', $newStreet);
+
+        $f = function (Street $street) use ($newStreet) {
+            return $newStreet;
+        };
+
+        expect($addressStreetLens->modify($address, $f))->toEqual($newAddress);
+        expect($address)->toEqual($oldAddress);
+    });
 });
 
 describe('Composing StreetNameLens with AddressStreetLens', function () use ($streetNameLens, $addressStreetLens) {
@@ -157,5 +180,15 @@ describe('Composing StreetNameLens with AddressStreetLens', function () use ($st
 
         expect($address)->toEqual($oldAddress);
         expect($newAddress)->not->toEqual($address);
+    });
+
+    it('modifies the internal value via a callable', function () use ($streetNameLens, $addressStreetLens, $address) {
+        $oldAddress = clone $address;
+
+        $newStreet = new Street(221, 'BAKER STREET');
+        $newAddress = new Address('London', $newStreet);
+
+        expect($addressStreetLens->compose($streetNameLens)->modify($address, 'strtoupper'))->toEqual($newAddress);
+        expect($address)->toEqual($oldAddress);
     });
 });

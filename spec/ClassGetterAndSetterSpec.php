@@ -51,4 +51,17 @@ describe('ClassGetterAndSetter', function () {
         expect($foo)->toEqual($oldFoo);
         expect($newFoo)->not->toEqual($foo);
     });
+
+    it('modifies the internal value via a callable', function () use ($barLens, $foo) {
+        $oldFoo = clone $foo;
+
+        $newFoo = new Foo(37);
+
+        $f = function (int $i) {
+            return $i - 5;
+        };
+
+        expect($barLens->modify($foo, $f))->toEqual($newFoo);
+        expect($foo)->toEqual($oldFoo);
+    });
 });

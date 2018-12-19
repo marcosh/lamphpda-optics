@@ -36,5 +36,19 @@ describe('ClassProperty', function () {
         expect($bar)->toEqual($oldBar);
         expect($newBar)->not->toEqual($bar);
     });
+
+    it('modifies the internal value via a callable', function () use ($fooLens, $bar) {
+        $oldBar = clone $bar;
+
+        $newBar = new Bar();
+        $newBar->foo = 37;
+
+        $f = function (int $i) {
+            return $i - 5;
+        };
+
+        expect($fooLens->modify($bar, $f))->toEqual($newBar);
+        expect($bar)->toEqual($oldBar);
+    });
 });
 

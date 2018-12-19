@@ -47,11 +47,21 @@ class BaseLens implements Lens
     /**
      * @param mixed $s : S
      * @param mixed $a : A
-     * @return mixed
+     * @return mixed : S
      */
     public function set($s, $a)
     {
         return ($this->set)($s, $a);
+    }
+
+    /**
+     * @param mixed $s : S
+     * @param callable $f : A -> A
+     * @return mixed : S
+     */
+    public function modify($s, callable $f)
+    {
+        return ($this->set)($s, $f(($this->get)($s)));
     }
 
     /**
