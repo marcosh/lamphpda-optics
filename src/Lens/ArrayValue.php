@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\Ophptics;
+namespace Marcosh\Ophptics\Lens;
 
 final class ArrayValue extends BaseLens implements Lens
 {

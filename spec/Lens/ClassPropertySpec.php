@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\OphpticsSpec;
+namespace Marcosh\OphpticsSpec\Lens;
 
-use Marcosh\Ophptics\ClassProperty;
+use Marcosh\Ophptics\Lens\ClassProperty;
 
 class Bar
 {

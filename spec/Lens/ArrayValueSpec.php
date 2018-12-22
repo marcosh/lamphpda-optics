@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\OphpticsSpec;
+namespace Marcosh\OphpticsSpec\Lens;
 
-use Marcosh\Ophptics\ArrayValue;
+use Marcosh\Ophptics\Lens\ArrayValue;
 
 describe('ArrayValue', function () {
     $barLens = new ArrayValue('bar');

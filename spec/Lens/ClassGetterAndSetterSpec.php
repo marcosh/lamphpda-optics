@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\OphpticsSpec;
+namespace Marcosh\OphpticsSpec\Lens;
 
-use Marcosh\Ophptics\ClassGetterAndSetter;
+use Marcosh\Ophptics\Lens\ClassGetterAndSetter;
 
 class Foo
 {
