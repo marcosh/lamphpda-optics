@@ -2,7 +2,7 @@
   "name": "marcosh/ophptics",
   "description": "A functional optics library for PHP",
   "type": "library",
-  "license": "MIT",
+  "license": "Hippocratic-2.1",
   "authors": [
     {
       "name": "Marco Perone",
@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "php": "^7.2"
+    "php": "^7.4"
   },
   "autoload": {
     "psr-4": {
@@ -18,7 +18,9 @@
     }
   },
   "require-dev": {
-    "maglnet/composer-require-checker": "^1.1",
-    "kahlan/kahlan": "^4.3"
+    "maglnet/composer-require-checker": "^2.1",
+    "kahlan/kahlan": "^4.7",
+    "squizlabs/php_codesniffer": "^3.5",
+    "vimeo/psalm": "^3.15"
   }
 }

@@ -1,3 +1,3 @@
 # ophptics
 
-A functional optic library for PHP
+A functional optics library for PHP
