@@ -1,0 +1,8 @@
+{
+  "symbol-whitelist": [
+    "self", "callable"
+  ],
+  "php-core-extensions" : [
+  ],
+  "scan-files" : []
+}
