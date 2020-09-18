@@ -45,4 +45,56 @@ final class Lens
     {
         return new self($get, $set);
     }
+
+    /**
+     * @param S $s
+     * @return A
+     */
+    public function get($s)
+    {
+        return ($this->get)($s);
+    }
+
+    /**
+     * @param S $s
+     * @param B $b
+     * @return T
+     */
+    public function set($s, $b)
+    {
+        return ($this->set)($s, $b);
+    }
+
+    /**
+     * @param callable(A): B $f
+     * @param S $s
+     * @return T
+     */
+    public function update(callable $f, $s)
+    {
+        return $this->set($s, $f(($this->get)($s)));
+    }
+
+    /**
+     * @template C
+     * @template D
+     * @param Lens<A, B, C, D> $that
+     * @return Lens<S, T, C, D>
+     */
+    public function compose(Lens $that): Lens
+    {
+        return new self(
+            (/**
+             * @param S $s
+             * @return C
+             */
+            fn($s) => $that->get(($this->get)($s))),
+            (/**
+             * @param S $s
+             * @param D $d
+             * @return T
+             */
+            fn($s, $d) => $this->set($s, $that->set($this->get($s), $d)))
+        );
+    }
 }
