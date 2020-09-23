@@ -34,26 +34,8 @@ class Baz
 
 describe('lens composition', function () {
     it('allows to access nested properties', function () {
-        $fooBar = Lens::lens(
-            (fn($bar) => $bar->foo),
-            function (Bar $bar, Foo $otherFoo) {
-                $otherBar = clone $bar;
-
-                $otherBar->foo = $otherFoo;
-
-                return $otherBar;
-            }
-        );
-        $barBaz = Lens::lens(
-            (fn($baz) => $baz->bar),
-            function (Baz $baz, Bar $otherBar) {
-                $otherBaz = clone $baz;
-
-                $otherBaz->bar = $otherBar;
-
-                return $otherBaz;
-            }
-        );
+        $fooBar = Lens::objectPublicProperty('foo');
+        $barBaz = Lens::objectPublicProperty('bar');
 
         $fooBaz = $barBaz->compose($fooBar);
 

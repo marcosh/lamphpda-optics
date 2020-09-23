@@ -47,6 +47,39 @@ final class Lens
     }
 
     /**
+     * @template U of object
+     * @template C
+     * @template C
+     * @param string $propertyName
+     * @return Lens<U, U, C, C>
+     *
+     * U should contain a property $propertyName of type C
+     */
+    public static function objectPublicProperty(string $propertyName): self
+    {
+        return new self(
+            (/**
+             * @param U $u
+             * @return C
+             * @psalm-suppress MixedInferredReturnType
+             * @psalm-suppress MixedReturnStatement
+             */
+            fn(object $u) => $u->$propertyName),
+            /**
+             * @param U $u
+             * @param C $newC
+             * @return U
+             */
+            function (object $u, $newC) use ($propertyName) {
+                $newU = clone $u;
+                $newU->$propertyName = $newC;
+
+                return $newU;
+            }
+        );
+    }
+
+    /**
      * @param S $s
      * @return A
      */
