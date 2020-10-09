@@ -42,4 +42,22 @@ final class Prism
     {
         return new self($review, $preview);
     }
+
+    /**
+     * @param B $b
+     * @return T
+     */
+    public function review($b)
+    {
+        return ($this->review)($b);
+    }
+
+    /**
+     * @param S $s
+     * @return Either<T, A>
+     */
+    public function preview($s): Either
+    {
+        return ($this->preview)($s);
+    }
 }
