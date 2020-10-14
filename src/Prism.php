@@ -60,4 +60,35 @@ final class Prism
     {
         return ($this->preview)($s);
     }
+
+    /**
+     * @template C
+     * @template D
+     * @param Prism<A, B, C, D> $that
+     * @return Prism<S, T, C, D>
+     */
+    public function compose(Prism $that): Prism
+    {
+        return new self(
+            (/**
+             * @param D $d
+             * @return T
+             */
+            fn($d) => $this->review($that->review($d))),
+            (/**
+             * @param S $s
+             * @return Either<T, C>
+             */
+            fn($s) => $this->preview($s)->bind(
+                /**
+                 * @param A $a
+                 * @return Either<T, C>
+                 *
+                 * @psalm-suppress InvalidArgument //TODO: this should be removed as soon as
+                 * https://github.com/vimeo/psalm/issues/4326 is solved
+                 */
+                fn($a) => $that->preview($a)->mapLeft($this->review)
+            ))
+        );
+    }
 }
