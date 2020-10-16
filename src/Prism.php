@@ -44,6 +44,86 @@ final class Prism
     }
 
     /**
+     * @template C
+     * @template D
+     * @template E
+     * @return Prism<Either<C, E>, Either<D, E>, C, D>
+     */
+    public static function left(): self
+    {
+        return new self(
+            /**
+             * @param D $d
+             * @return Either<D, E>
+             */
+            fn($d) => Either::left($d),
+            /**
+             * @param Either<C, E> $eitherCE
+             * @return Either<Either<D, E>, C>
+             */
+            function (Either $eitherCE) {
+                return $eitherCE->eval(
+                    /**
+                     * @param C $c
+                     * @return Either<Either<D, E>, C>
+                     */
+                    fn($c) => Either::right($c),
+                    /**
+                     * @param E $e
+                     * @return Either<Either<D, E>, C>
+                     */
+                    function ($e) {
+                        /** @var Either<D, E> $eitherDE */
+                        $eitherDE = Either::right($e);
+
+                        return Either::left($eitherDE);
+                    }
+                );
+            }
+        );
+    }
+
+    /**
+     * @template C
+     * @template D
+     * @template E
+     * @return Prism<Either<E, C>, Either<E, D>, C, D>
+     */
+    public static function right(): self
+    {
+        return new self(
+            /**
+             * @param D $d
+             * @return Either<E, D>
+             */
+            fn($d) => Either::right($d),
+            /**
+             * @param Either<E, C> $eitherEC
+             * @return Either<Either<E, D>, C>
+             */
+            function (Either $eitherEC) {
+                return $eitherEC->eval(
+                    /**
+                     * @param E $e
+                     * @return Either<Either<E, D>, C>
+                     */
+                    function ($e) {
+                        /** @var Either<E, D> $eitherED */
+                        $eitherED = Either::left($e);
+
+                        return Either::left($eitherED);
+                    },
+                    /**
+                     * @param C $c
+                     * @return Either<Either<E, D>, C>
+                     */
+                    fn($c) => Either::right($c)
+                );
+            }
+        );
+    }
+
+    /**
      * @param B $b
      * @return T
      */
