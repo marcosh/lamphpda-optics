@@ -39,6 +39,7 @@ final class Prism
      * @param callable(D): V $review
      * @param callable(U): Either<V, C> $preview
      * @return self<U, V, C, D>
+     * @psalm-pure
      */
     public static function prism(callable $review, callable $preview): self
     {
@@ -50,6 +51,7 @@ final class Prism
      * @template D
      * @template E
      * @return Prism<Either<C, E>, Either<D, E>, C, D>
+     * @psalm-pure
      */
     public static function left(): self
     {
@@ -90,6 +92,7 @@ final class Prism
      * @template D
      * @template E
      * @return Prism<Either<E, C>, Either<E, D>, C, D>
+     * @psalm-pure
      */
     public static function right(): self
     {

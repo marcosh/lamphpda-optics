@@ -41,6 +41,7 @@ final class Lens
      * @param callable(U): C $get
      * @param callable(U, D): V $set
      * @return self<U, V, C, D>
+     * @psalm-pure
      */
     public static function lens(callable $get, callable $set): self
     {
@@ -53,6 +54,7 @@ final class Lens
      * @template C
      * @param string $propertyName
      * @return Lens<U, U, C, C>
+     * @psalm-pure
      *
      * U should contain a property $propertyName of type C
      */
