@@ -9,6 +9,7 @@ namespace Marcosh\Ophptics;
  * @template T
  * @template A
  * @template B
+ * @psalm-immutable
  */
 final class Lens
 {

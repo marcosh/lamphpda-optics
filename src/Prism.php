@@ -11,6 +11,7 @@ use Marcosh\LamPHPda\Either;
  * @template T
  * @template A
  * @template B
+ * @psalm-immutable
  */
 final class Prism
 {
