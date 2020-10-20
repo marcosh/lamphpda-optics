@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Marcosh\Ophptics;
 
+use Marcosh\LamPHPda\Either;
+
 /**
  * @template S
  * @template T
@@ -37,6 +39,7 @@ final class Iso
      * @param callable(U): C $to
      * @param callable(D): V $from
      * @return Iso<U, V, C, D>
+     * @psalm-pure
      */
     public static function iso(callable $to, callable $from): self
     {
@@ -67,5 +70,36 @@ final class Iso
     public function inverse(): self
     {
         return new self($this->from, $this->to);
+    }
+
+    /**
+     * @return Lens<S, T, A, B>
+     */
+    public function asLens(): Lens
+    {
+        return Lens::lens(
+            $this->to,
+            /**
+             * @param S $s
+             * @param B $b
+             * @return T
+             */
+            fn($s, $b) => $this->from($b)
+        );
+    }
+
+    /**
+     * @return Prism<S, T, A, B>
+     */
+    public function asPrism(): Prism
+    {
+        return Prism::prism(
+            $this->from,
+            /**
+             * @param S $s
+             * @return Either<T, A>
+             */
+            fn($s) => Either::right($this->to($s))
+        );
     }
 }
