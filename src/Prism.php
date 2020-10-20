@@ -38,6 +38,7 @@ final class Prism
      * @template D
      * @param callable(D): V $review
      * @param callable(U): Either<V, C> $preview
+     * @return self<U, V, C, D>
      */
     public static function prism(callable $review, callable $preview): self
     {
