@@ -102,4 +102,26 @@ final class Iso
             fn($s) => Either::right($this->to($s))
         );
     }
+
+    /**
+     * @template C
+     * @template D
+     * @param Iso<A, B, C, D> $that
+     * @return Iso<S, T, C, D>
+     */
+    public function compose(Iso $that): Iso
+    {
+        return new self(
+            /**
+             * @param S $s
+             * @return C
+             */
+            fn($s) => $that->to($this->to($s)),
+            /**
+             * @param D $d
+             * @return T
+             */
+            fn($d) => $this->from($that->from($d))
+        );
+    }
 }
