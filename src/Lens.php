@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\Ophptics;
+namespace Marcosh\LamPHPda\Optics;
 
 /**
  * @template S

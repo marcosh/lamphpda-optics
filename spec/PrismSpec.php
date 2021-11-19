@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\OphpticsSpec;
+namespace Marcosh\LamPHPda\OpticsSpec;
 
 use Marcosh\LamPHPda\Either;
-use Marcosh\Ophptics\Prism;
+use Marcosh\LamPHPda\Optics\Prism;
 
 describe('prisms composition', function () {
     // consider a data structure with nested `Either`s as `Either<int, Either<string, float>>`

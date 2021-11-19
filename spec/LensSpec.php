@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Marcosh\OphpticsSpec;
+namespace Marcosh\LamPHPda\OpticsSpec;
 
-use Marcosh\Ophptics\Lens;
+use Marcosh\LamPHPda\Optics\Lens;
 
 class Foo
 {

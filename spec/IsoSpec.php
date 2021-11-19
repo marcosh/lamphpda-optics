@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-use Marcosh\Ophptics\Iso;
+namespace Marcosh\LamPHPda\OpticsSpec;
+
+use Marcosh\LamPHPda\Optics\Iso;
 
 describe('iso composition', function () {
     it('allows to morph between different representations', function () {
