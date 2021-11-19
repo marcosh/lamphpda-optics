@@ -1,8 +1,15 @@
 {
   "symbol-whitelist": [
-    "callable", "self", "string"
+    "null", "bool", "self", "true", "false", "callable", "string"
   ],
   "php-core-extensions" : [
+    "Core",
+    "date",
+    "pcre",
+    "Phar",
+    "Reflection",
+    "SPL",
+    "standard"
   ],
   "scan-files" : []
 }

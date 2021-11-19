@@ -1,5 +1,5 @@
 {
-  "name": "marcosh/ophptics",
+  "name": "marcosh/lamphpda-optics",
   "description": "A functional optics library for PHP",
   "type": "library",
   "license": "Hippocratic-2.1",
@@ -10,18 +10,18 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": "^7.4|^8.0",
     "marcosh/lamphpda": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "Marcosh\\Ophptics\\": "src/"
+      "Marcosh\\Lamphpda\\Optics\\": "src/"
     }
   },
   "require-dev": {
-    "maglnet/composer-require-checker": "^2.1",
-    "kahlan/kahlan": "^4.7",
-    "squizlabs/php_codesniffer": "^3.5",
-    "vimeo/psalm": "^3.17"
+    "maglnet/composer-require-checker": "^3.5",
+    "kahlan/kahlan": "^5.1",
+    "squizlabs/php_codesniffer": "^3.6",
+    "vimeo/psalm": "^4.12"
   }
 }
