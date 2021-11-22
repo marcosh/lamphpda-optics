@@ -163,20 +163,19 @@ final class Prism
              * @return T
              */
             fn($d) => $this->review($that->review($d))),
-            (/**
+            /**
              * @param S $s
              * @return Either<T, C>
+             *
+             * @psalm-suppress ArgumentTypeCoercion
              */
             fn($s) => $this->preview($s)->bind(
                 /**
                  * @param A $a
                  * @return Either<T, C>
-                 *
-                 * @psalm-suppress InvalidArgument //TODO: this should be removed as soon as
-                 * https://github.com/vimeo/psalm/issues/4326 is solved
                  */
                 fn($a) => $that->preview($a)->mapLeft($this->review)
-            ))
+            )
         );
     }
 }
