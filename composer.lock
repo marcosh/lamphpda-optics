@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4699f9dc0388cecc54ae7b89f52bd966",
+    "content-hash": "05234ecac6b67d014ef54e4534cdcb3e",
     "packages": [
         {
             "name": "amphp/amp",
@@ -426,12 +426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcosh/lamphpda.git",
-                "reference": "eff54aa5a6621902e3faf231263354f5212bb2c7"
+                "reference": "adf414cb2ac9b2f74e80021962290f9985225563"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcosh/lamphpda/zipball/eff54aa5a6621902e3faf231263354f5212bb2c7",
-                "reference": "eff54aa5a6621902e3faf231263354f5212bb2c7",
+                "url": "https://api.github.com/repos/marcosh/lamphpda/zipball/adf414cb2ac9b2f74e80021962290f9985225563",
+                "reference": "adf414cb2ac9b2f74e80021962290f9985225563",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,7 @@
                 "issues": "https://github.com/marcosh/lamphpda/issues",
                 "source": "https://github.com/marcosh/lamphpda/tree/master"
             },
-            "time": "2021-11-19T14:36:51+00:00"
+            "time": "2021-11-22T09:10:00+00:00"
         },
         {
             "name": "netresearch/jsonmapper",
