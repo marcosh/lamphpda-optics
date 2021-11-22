@@ -60,6 +60,7 @@ final class Lens
      */
     public static function objectPublicProperty(string $propertyName): self
     {
+        /** @var Lens<U, U, C, C> */
         return new self(
             (/**
              * @param U $u

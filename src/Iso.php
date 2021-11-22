@@ -80,11 +80,11 @@ final class Iso
         return Lens::lens(
             $this->to,
             /**
-             * @param S $s
+             * @param S $_
              * @param B $b
              * @return T
              */
-            fn($s, $b) => $this->from($b)
+            fn($_, $b) => $this->from($b)
         );
     }
 

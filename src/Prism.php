@@ -55,6 +55,7 @@ final class Prism
      */
     public static function left(): self
     {
+        /** @var Prism<Either<C, E>, Either<D, E>, C, D> */
         return new self(
             /**
              * @param D $d
@@ -96,6 +97,7 @@ final class Prism
      */
     public static function right(): self
     {
+        /** @var Prism<Either<E, C>, Either<E, D>, C, D> */
         return new self(
             /**
              * @param D $d
