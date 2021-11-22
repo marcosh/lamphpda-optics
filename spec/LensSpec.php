@@ -10,6 +10,7 @@ class Foo
 {
 }
 
+// phpcs:ignore PSR1.Classes.ClassDeclaration.MultipleClasses
 class Bar
 {
     /** @var Foo */
@@ -21,6 +22,7 @@ class Bar
     }
 }
 
+// phpcs:ignore PSR1.Classes.ClassDeclaration.MultipleClasses
 class Baz
 {
     /** @var Bar */
