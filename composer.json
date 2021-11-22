@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Marcosh\\Lamphpda\\Optics\\": "src/"
+      "Marcosh\\LamPHPda\\Optics\\": "src/"
     }
   },
   "require-dev": {
