@@ -156,6 +156,7 @@ final class Prism
      */
     public function compose(Prism $that): Prism
     {
+        /** @psalm-suppress InvalidArgument */
         return new self(
             (/**
              * @param D $d

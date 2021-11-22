@@ -120,6 +120,7 @@ final class Lens
      */
     public function compose(Lens $that): Lens
     {
+        /** @psalm-suppress InvalidArgument */
         return new self(
             (/**
              * @param S $s

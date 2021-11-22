@@ -111,6 +111,7 @@ final class Iso
      */
     public function compose(Iso $that): Iso
     {
+        /** @psalm-suppress InvalidArgument */
         return new self(
             /**
              * @param S $s
