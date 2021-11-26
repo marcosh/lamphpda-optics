@@ -62,13 +62,13 @@ final class Lens
     {
         /** @var Lens<U, U, C, C> */
         return new self(
-            (/**
+            /**
              * @param U $u
              * @return C
              * @psalm-suppress MixedInferredReturnType
              * @psalm-suppress MixedReturnStatement
              */
-            fn(object $u) => $u->$propertyName),
+            fn(object $u) => $u->$propertyName,
             /**
              * @param U $u
              * @param C $newC
@@ -79,6 +79,36 @@ final class Lens
                 $newU->$propertyName = $newC;
 
                 return $newU;
+            }
+        );
+    }
+
+    /**
+     * @template C
+     * @template D
+     * @param array-key $arrayKey
+     * @return Lens<array, array, C, D>
+     *
+     * array should contain a key $arrayKey of type C
+     */
+    public static function arrayKey($arrayKey): self
+    {
+        /** @var Lens<array, array, C, D> */
+        return new self(
+            /**
+             * @return C
+             *
+             * @psalm-suppress MixedInferredReturnType, MixedReturnStatement
+             */
+            fn(array $a) => $a[$arrayKey],
+            /**
+             * @param D $d
+             * @return array
+             */
+            function (array $a, $d) use ($arrayKey) {
+                $a[$arrayKey] = $d;
+
+                return $a;
             }
         );
     }
