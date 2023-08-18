@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb8e0319f0c2fb9009f7e9a2ddd5b830",
+    "content-hash": "79b6bbca1d6c676be9e5d291fabf69e8",
     "packages": [
+        {
+            "name": "marcosh/lamphpda",
+            "version": "dev-constant-monoid",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marcosh/lamphpda.git",
+                "reference": "79c5ad53b2f9e69cd29d07a29a3a3c3fa64f3392"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marcosh/lamphpda/zipball/79c5ad53b2f9e69cd29d07a29a3a3c3fa64f3392",
+                "reference": "79c5ad53b2f9e69cd29d07a29a3a3c3fa64f3392",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "kahlan/kahlan": "^5.2",
+                "maglnet/composer-require-checker": "^3.8",
+                "vimeo/psalm": "^4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Marcosh\\LamPHPda\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Hippocratic-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Perone",
+                    "email": "pasafama@gmail.com"
+                }
+            ],
+            "description": "A collection of functional programming data structures",
+            "homepage": "https://github.com/marcosh/lamphpda",
+            "keywords": [
+                "Applicative",
+                "data structures",
+                "functional programming",
+                "functor",
+                "monad",
+                "monoid"
+            ],
+            "support": {
+                "issues": "https://github.com/marcosh/lamphpda/issues",
+                "source": "https://github.com/marcosh/lamphpda/tree/constant-monoid"
+            },
+            "time": "2023-08-17T16:04:23+00:00"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "amphp/amp",
             "version": "v2.4.2",
@@ -421,60 +478,142 @@
             "time": "2020-10-23T13:55:30+00:00"
         },
         {
-            "name": "marcosh/lamphpda",
-            "version": "v1.0.0",
+            "name": "kahlan/kahlan",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/marcosh/lamphpda.git",
-                "reference": "c02c57f61e3717e820d41bfb9fb9756662efa6ed"
+                "url": "https://github.com/kahlan/kahlan.git",
+                "reference": "2a08d7ebcf1070867d38ca4c571f4ff57ad58994"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcosh/lamphpda/zipball/c02c57f61e3717e820d41bfb9fb9756662efa6ed",
-                "reference": "c02c57f61e3717e820d41bfb9fb9756662efa6ed",
+                "url": "https://api.github.com/repos/kahlan/kahlan/zipball/2a08d7ebcf1070867d38ca4c571f4ff57ad58994",
+                "reference": "2a08d7ebcf1070867d38ca4c571f4ff57ad58994",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "roave/you-are-using-it-wrong": "^1.8"
+                "php": ">=7.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.5",
-                "kahlan/kahlan": "^5.2",
-                "maglnet/composer-require-checker": "^3.8",
-                "vimeo/psalm": "^4.19"
+                "squizlabs/php_codesniffer": "^3.4"
             },
+            "bin": [
+                "bin/kahlan"
+            ],
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Marcosh\\LamPHPda\\": "src/"
+                    "Kahlan\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CrysaLEAD"
+                }
+            ],
+            "description": "The PHP Test Framework for Freedom, Truth and Justice.",
+            "keywords": [
+                "BDD",
+                "Behavior-Driven Development",
+                "Monkey Patching",
+                "TDD",
+                "mock",
+                "stub",
+                "testing",
+                "unit test"
+            ],
+            "support": {
+                "issues": "https://github.com/kahlan/kahlan/issues",
+                "source": "https://github.com/kahlan/kahlan/tree/5.1.0"
+            },
+            "time": "2021-04-22T12:34:26+00:00"
+        },
+        {
+            "name": "maglnet/composer-require-checker",
+            "version": "3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maglnet/ComposerRequireChecker.git",
+                "reference": "1379c49cedc3af89a6847e821e5fd4d7b2b882a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maglnet/ComposerRequireChecker/zipball/1379c49cedc3af89a6847e821e5fd4d7b2b882a6",
+                "reference": "1379c49cedc3af89a6847e821e5fd4d7b2b882a6",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.0.0",
+                "ext-json": "*",
+                "ext-phar": "*",
+                "nikic/php-parser": "^4.13.0",
+                "php": "^7.4 || ^8.0",
+                "symfony/console": "^5.3.10",
+                "webmozart/assert": "^1.9.1",
+                "webmozart/glob": "^4.4.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9.0.0",
+                "ext-zend-opcache": "*",
+                "mikey179/vfsstream": "^1.6.10",
+                "phing/phing": "^2.17.0",
+                "phpstan/phpstan": "^1.1.1",
+                "phpunit/phpunit": "^9.5.10",
+                "vimeo/psalm": "^4.12.0"
+            },
+            "bin": [
+                "bin/composer-require-checker"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ComposerRequireChecker\\": "src/ComposerRequireChecker"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Hippocratic-2.1"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Marco Perone",
-                    "email": "pasafama@gmail.com"
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.io/"
+                },
+                {
+                    "name": "Matthias Glaub",
+                    "email": "magl@magl.net",
+                    "homepage": "http://magl.net"
                 }
             ],
-            "description": "A collection of functional programming data structures",
-            "homepage": "https://github.com/marcosh/lamphpda",
+            "description": "CLI tool to analyze composer dependencies and verify that no unknown symbols are used in the sources of a package",
+            "homepage": "https://github.com/maglnet/ComposerRequireChecker",
             "keywords": [
-                "Applicative",
-                "data structures",
-                "functional programming",
-                "functor",
-                "monad",
-                "monoid"
+                "analysis",
+                "cli",
+                "composer",
+                "dependency",
+                "imports",
+                "require",
+                "requirements"
             ],
             "support": {
-                "issues": "https://github.com/marcosh/lamphpda/issues",
-                "source": "https://github.com/marcosh/lamphpda/tree/v1.0.0"
+                "issues": "https://github.com/maglnet/ComposerRequireChecker/issues",
+                "source": "https://github.com/maglnet/ComposerRequireChecker/tree/3.5.0"
             },
-            "time": "2022-02-07T16:27:31+00:00"
+            "time": "2021-11-10T11:54:56+00:00"
         },
         {
             "name": "netresearch/jsonmapper",
@@ -945,60 +1084,6 @@
             "time": "2012-12-21T11:40:51+00:00"
         },
         {
-            "name": "roave/you-are-using-it-wrong",
-            "version": "1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/you-are-using-it-wrong.git",
-                "reference": "4a57b56cf82c4cccea84ba664f5073f0ad04e9f8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/you-are-using-it-wrong/zipball/4a57b56cf82c4cccea84ba664f5073f0ad04e9f8",
-                "reference": "4a57b56cf82c4cccea84ba664f5073f0ad04e9f8",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^2.0.0",
-                "ext-json": "*",
-                "ocramius/package-versions": "^2.1.0",
-                "php": "^7.4.7 || ~8.0.0",
-                "vimeo/psalm": "^4.0.1"
-            },
-            "require-dev": {
-                "composer/composer": "^2.0.0@alpha",
-                "doctrine/coding-standard": "^8.1.0",
-                "infection/infection": "^0.20.2",
-                "phpunit/phpunit": "^9.4.0",
-                "symfony/process": "^5.1.3"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Roave\\YouAreUsingItWrong\\Hook"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Roave\\YouAreUsingItWrong\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Composer plugin enforcing strict type checks in downstream package dependants",
-            "support": {
-                "issues": "https://github.com/Roave/you-are-using-it-wrong/issues",
-                "source": "https://github.com/Roave/you-are-using-it-wrong/tree/1.8.0"
-            },
-            "time": "2020-11-30T10:10:33+00:00"
-        },
-        {
             "name": "sebastian/diff",
             "version": "3.0.3",
             "source": {
@@ -1063,6 +1148,62 @@
                 }
             ],
             "time": "2020-11-30T07:59:04+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "support": {
+                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
+                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
+            },
+            "time": "2021-04-09T00:54:41+00:00"
         },
         {
             "name": "symfony/console",
@@ -1929,6 +2070,56 @@
             "time": "2020-07-08T17:02:28+00:00"
         },
         {
+            "name": "webmozart/glob",
+            "version": "4.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozarts/glob.git",
+                "reference": "539b5dbc10021d3f9242e7a9e9b6b37843179e83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozarts/glob/zipball/539b5dbc10021d3f9242e7a9e9b6b37843179e83",
+                "reference": "539b5dbc10021d3f9242e7a9e9b6b37843179e83",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0.0",
+                "webmozart/path-util": "^2.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5",
+                "symfony/filesystem": "^5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Glob\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "A PHP implementation of Ant's glob.",
+            "support": {
+                "issues": "https://github.com/webmozarts/glob/issues",
+                "source": "https://github.com/webmozarts/glob/tree/4.4.0"
+            },
+            "time": "2021-10-07T16:13:08+00:00"
+        },
+        {
             "name": "webmozart/path-util",
             "version": "2.3.0",
             "source": {
@@ -1980,255 +2171,11 @@
             "time": "2015-12-17T08:42:14+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "kahlan/kahlan",
-            "version": "5.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kahlan/kahlan.git",
-                "reference": "2a08d7ebcf1070867d38ca4c571f4ff57ad58994"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kahlan/kahlan/zipball/2a08d7ebcf1070867d38ca4c571f4ff57ad58994",
-                "reference": "2a08d7ebcf1070867d38ca4c571f4ff57ad58994",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^3.4"
-            },
-            "bin": [
-                "bin/kahlan"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Kahlan\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "CrysaLEAD"
-                }
-            ],
-            "description": "The PHP Test Framework for Freedom, Truth and Justice.",
-            "keywords": [
-                "BDD",
-                "Behavior-Driven Development",
-                "Monkey Patching",
-                "TDD",
-                "mock",
-                "stub",
-                "testing",
-                "unit test"
-            ],
-            "support": {
-                "issues": "https://github.com/kahlan/kahlan/issues",
-                "source": "https://github.com/kahlan/kahlan/tree/5.1.0"
-            },
-            "time": "2021-04-22T12:34:26+00:00"
-        },
-        {
-            "name": "maglnet/composer-require-checker",
-            "version": "3.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maglnet/ComposerRequireChecker.git",
-                "reference": "1379c49cedc3af89a6847e821e5fd4d7b2b882a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maglnet/ComposerRequireChecker/zipball/1379c49cedc3af89a6847e821e5fd4d7b2b882a6",
-                "reference": "1379c49cedc3af89a6847e821e5fd4d7b2b882a6",
-                "shasum": ""
-            },
-            "require": {
-                "composer-runtime-api": "^2.0.0",
-                "ext-json": "*",
-                "ext-phar": "*",
-                "nikic/php-parser": "^4.13.0",
-                "php": "^7.4 || ^8.0",
-                "symfony/console": "^5.3.10",
-                "webmozart/assert": "^1.9.1",
-                "webmozart/glob": "^4.4.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^9.0.0",
-                "ext-zend-opcache": "*",
-                "mikey179/vfsstream": "^1.6.10",
-                "phing/phing": "^2.17.0",
-                "phpstan/phpstan": "^1.1.1",
-                "phpunit/phpunit": "^9.5.10",
-                "vimeo/psalm": "^4.12.0"
-            },
-            "bin": [
-                "bin/composer-require-checker"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ComposerRequireChecker\\": "src/ComposerRequireChecker"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.io/"
-                },
-                {
-                    "name": "Matthias Glaub",
-                    "email": "magl@magl.net",
-                    "homepage": "http://magl.net"
-                }
-            ],
-            "description": "CLI tool to analyze composer dependencies and verify that no unknown symbols are used in the sources of a package",
-            "homepage": "https://github.com/maglnet/ComposerRequireChecker",
-            "keywords": [
-                "analysis",
-                "cli",
-                "composer",
-                "dependency",
-                "imports",
-                "require",
-                "requirements"
-            ],
-            "support": {
-                "issues": "https://github.com/maglnet/ComposerRequireChecker/issues",
-                "source": "https://github.com/maglnet/ComposerRequireChecker/tree/3.5.0"
-            },
-            "time": "2021-11-10T11:54:56+00:00"
-        },
-        {
-            "name": "squizlabs/php_codesniffer",
-            "version": "3.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
-                "reference": "ffced0d2c8fa8e6cdc4d695a743271fab6c38625",
-                "shasum": ""
-            },
-            "require": {
-                "ext-simplexml": "*",
-                "ext-tokenizer": "*",
-                "ext-xmlwriter": "*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
-            },
-            "bin": [
-                "bin/phpcs",
-                "bin/phpcbf"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Sherwood",
-                    "role": "lead"
-                }
-            ],
-            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
-            "keywords": [
-                "phpcs",
-                "standards"
-            ],
-            "support": {
-                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
-                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
-                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
-            },
-            "time": "2021-04-09T00:54:41+00:00"
-        },
-        {
-            "name": "webmozart/glob",
-            "version": "4.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozarts/glob.git",
-                "reference": "539b5dbc10021d3f9242e7a9e9b6b37843179e83"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/glob/zipball/539b5dbc10021d3f9242e7a9e9b6b37843179e83",
-                "reference": "539b5dbc10021d3f9242e7a9e9b6b37843179e83",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0.0",
-                "webmozart/path-util": "^2.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5",
-                "symfony/filesystem": "^5.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Glob\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                }
-            ],
-            "description": "A PHP implementation of Ant's glob.",
-            "support": {
-                "issues": "https://github.com/webmozarts/glob/issues",
-                "source": "https://github.com/webmozarts/glob/tree/4.4.0"
-            },
-            "time": "2021-10-07T16:13:08+00:00"
-        }
-    ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "marcosh/lamphpda": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
