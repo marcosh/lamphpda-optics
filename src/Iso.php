@@ -15,15 +15,15 @@ use Marcosh\LamPHPda\Either;
  */
 final class Iso
 {
-    /** @var callable(S): A */
+    /** @var pure-callable(S): A */
     private $to;
 
-    /** @var callable(B): T */
+    /** @var pure-callable(B): T */
     private $from;
 
     /**
-     * @param callable(S): A $to
-     * @param callable(B): T $from
+     * @param pure-callable(S): A $to
+     * @param pure-callable(B): T $from
      */
     private function __construct(callable $to, callable $from)
     {
@@ -36,8 +36,8 @@ final class Iso
      * @template V
      * @template C
      * @template D
-     * @param callable(U): C $to
-     * @param callable(D): V $from
+     * @param pure-callable(U): C $to
+     * @param pure-callable(D): V $from
      * @return Iso<U, V, C, D>
      * @psalm-pure
      */
@@ -77,6 +77,7 @@ final class Iso
      */
     public function asLens(): Lens
     {
+        /** @psalm-suppress InvalidArgument */
         return Lens::lens(
             $this->to,
             /**
@@ -93,6 +94,7 @@ final class Iso
      */
     public function asPrism(): Prism
     {
+        /** @psalm-suppress InvalidArgument */
         return Prism::prism(
             $this->from,
             /**

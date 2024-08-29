@@ -14,18 +14,18 @@ namespace Marcosh\LamPHPda\Optics;
 final class Lens
 {
     /**
-     * @var callable(S): A
+     * @var pure-callable(S): A
      */
     private $get;
 
     /**
-     * @var callable(S, B): T
+     * @var pure-callable(S, B): T
      */
     private $set;
 
     /**
-     * @param callable(S): A $get
-     * @param callable(S, B): T $set
+     * @param pure-callable(S): A $get
+     * @param pure-callable(S, B): T $set
      */
     private function __construct(callable $get, callable $set)
     {
@@ -38,8 +38,8 @@ final class Lens
      * @template V
      * @template C
      * @template D
-     * @param callable(U): C $get
-     * @param callable(U, D): V $set
+     * @param pure-callable(U): C $get
+     * @param pure-callable(U, D): V $set
      * @return self<U, V, C, D>
      * @psalm-pure
      */
@@ -60,7 +60,10 @@ final class Lens
      */
     public static function objectPublicProperty(string $propertyName): self
     {
-        /** @var Lens<U, U, C, C> */
+        /**
+         * @var Lens<U, U, C, C>
+         * @psalm-suppress InvalidArgument
+         */
         return new self(
             /**
              * @param U $u
@@ -133,7 +136,7 @@ final class Lens
     }
 
     /**
-     * @param callable(A): B $f
+     * @param pure-callable(A): B $f
      * @param S $s
      * @return T
      */

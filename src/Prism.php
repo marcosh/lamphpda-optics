@@ -15,15 +15,15 @@ use Marcosh\LamPHPda\Either;
  */
 final class Prism
 {
-    /** @var callable(B): T */
+    /** @var pure-callable(B): T */
     private $review;
 
-    /** @var callable(S): Either<T, A> */
+    /** @var pure-callable(S): Either<T, A> */
     private $preview;
 
     /**
-     * @param callable(B): T $review
-     * @param callable(S): Either<T, A> $preview
+     * @param pure-callable(B): T $review
+     * @param pure-callable(S): Either<T, A> $preview
      */
     private function __construct(callable $review, callable $preview)
     {
@@ -36,8 +36,8 @@ final class Prism
      * @template V
      * @template C
      * @template D
-     * @param callable(D): V $review
-     * @param callable(U): Either<V, C> $preview
+     * @param pure-callable(D): V $review
+     * @param pure-callable(U): Either<V, C> $preview
      * @return self<U, V, C, D>
      * @psalm-pure
      */
