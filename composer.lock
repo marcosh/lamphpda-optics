@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "617ce27589174f8670c0cf9f04a44a7d",
+    "content-hash": "0250f4989448b7006c7c7e62b99c80db",
     "packages": [
         {
             "name": "marcosh/lamphpda",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcosh/lamphpda.git",
-                "reference": "2d6a02c59d21a7d0e52833e844ab19df0d3fac4d"
+                "reference": "6688060a883efa67d77bdafbac308c11af347384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcosh/lamphpda/zipball/2d6a02c59d21a7d0e52833e844ab19df0d3fac4d",
-                "reference": "2d6a02c59d21a7d0e52833e844ab19df0d3fac4d",
+                "url": "https://api.github.com/repos/marcosh/lamphpda/zipball/6688060a883efa67d77bdafbac308c11af347384",
+                "reference": "6688060a883efa67d77bdafbac308c11af347384",
                 "shasum": ""
             },
             "require": {
@@ -57,9 +57,9 @@
             ],
             "support": {
                 "issues": "https://github.com/marcosh/lamphpda/issues",
-                "source": "https://github.com/marcosh/lamphpda/tree/v3.1.0"
+                "source": "https://github.com/marcosh/lamphpda/tree/v3.1.1"
             },
-            "time": "2024-08-27T07:07:25+00:00"
+            "time": "2024-08-29T08:13:54+00:00"
         }
     ],
     "packages-dev": [
